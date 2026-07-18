@@ -1,0 +1,36 @@
+# GitHub Action: generates GitHub stat cards as STATIC SVGs and commits them to your repo.
+# These SVGs are built from the GitHub API (via the built-in GITHUB_TOKEN) — they do NOT
+# depend on the flaky github-readme-stats.vercel.app service, so they can never 503.
+#
+# SETUP (in the dev-Anamul/dev-Anamul repo):
+#   1. Create the folder path: .github/workflows/
+#   2. Save this file as:      .github/workflows/profile-summary-cards.yml
+#   3. Settings → Actions → General → Workflow permissions → enable "Read and write permissions".
+#   4. Actions tab → run "GitHub Profile Summary Cards" once (workflow_dispatch) to generate now.
+#   5. It then refreshes automatically every day (cron below).
+#
+# OUTPUT: creates /profile-summary-card-output/<theme>/*.svg in the repo. Reference them in your
+#         profile README (see github-profile-README.md for the exact image tags).
+
+name: GitHub Profile Summary Cards
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # daily at 00:00 UTC
+  workflow_dispatch:        # lets you run it manually from the Actions tab
+
+jobs:
+  generate:
+    name: generate-cards
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # needed to commit the generated SVGs back to the repo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          BRANCH_NAME: "main"
+          # AUTO_PUSH defaults to true — it commits the SVGs into the repo for you.

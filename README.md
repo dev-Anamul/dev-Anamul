@@ -1,3 +1,13 @@
+<!--
+HOW TO USE THIS FILE:
+1. Create (or open) the special repo named EXACTLY your username: github.com/dev-Anamul/dev-Anamul
+2. Add a file named README.md at the repo root, on the DEFAULT branch (main).
+   NOTE: your current repo returned 404 for README.md on main — likely no README committed,
+   or it's on a non-default branch. Commit this as README.md on `main` and it will render on your profile.
+3. Paste everything BELOW this comment block. Replace every [BRACKET] placeholder.
+4. Commit. Refresh your profile — it renders at the top.
+-->
+
 <h1 align="center">Hi, I'm Md. Anamul Haque 👋</h1>
 
 <p align="center">
@@ -70,14 +80,37 @@ Backend engineer with **3+ years of production experience** building scalable se
 
 ### 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=dev-Anamul&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="stats" height="165"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dev-Anamul&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="top langs" height="165"/>
-</p>
+<!--
+  These are STATIC SVGs committed INTO this repo (not live calls to a flaky external
+  service), so they can NEVER show a broken image / 503 to a recruiter.
+
+  They are generated + refreshed daily by the GitHub Action in:
+  .github/workflows/profile-summary-cards.yml  (setup instructions are in that file)
+
+  After the Action runs once, these files exist and the images below will render.
+  If you use a theme other than "tokyonight", change the folder name in the paths.
+-->
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=dev-Anamul&theme=tokyonight&hide_border=true" alt="streak" height="165"/>
+  <img src="./profile-summary-card-output/tokyonight/1-repos-per-language.svg" alt="Top languages" />
+  <img src="./profile-summary-card-output/tokyonight/3-stats.svg" alt="GitHub stats" />
 </p>
+<p align="center">
+  <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" alt="Most-used language" />
+  <img src="./profile-summary-card-output/tokyonight/4-productive-time.svg" alt="Productive time" />
+</p>
+
+<!-- Streak card: a static snapshot is available at ./assets/streak.svg (copy it in from
+     interview-prep-guide/assets/github-cards/streak.svg). Or, for a live-updating version,
+     use the maintained demolab host (reliable, unlike the old heroku one):
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=dev-Anamul&theme=tokyonight&hide_border=true" alt="GitHub streak" height="165"/>
+</p>
+-->
+
+> Note: only add the stats section once you're committing regularly (e.g. to the flagship
+> project). If your activity is still thin, a clean profile without stats looks stronger than
+> stats that reveal a quiet graph — your positioning, badges, and pinned projects carry it.
 
 ---
 
